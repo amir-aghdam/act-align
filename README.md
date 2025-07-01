@@ -3,7 +3,6 @@
 This repository hosts the **project website** for the paper:
 
 **ActAlign: Zero-Shot Fine-Grained Video Classification via Language-Guided Sequence Alignment**  
-*Amir Aghdam, Vincent Tao Hu*  
 
 📄 **Paper**: [arXiv:2506.22967](https://arxiv.org/abs/2506.22967)  
 🌐 **Project Website**: [https://amir-aghdam.github.io/ActAlign](https://amir-aghdam.github.io/act-align)  
