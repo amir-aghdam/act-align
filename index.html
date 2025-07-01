@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Zero-shot Fine-grained Video Classification">
+  <meta property="og:title" content="ActAlign: Zero-shot Video Classification"/>
+  <meta property="og:description" content="ActAlign: Zero-Shot Fine-Grained Video Classification via Language-Guided Sequence Alignment"/>
+  <meta property="og:url" content="https://amir-aghdam.github.io/act-align/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="675"/>
+
+
+  <meta name="twitter:title" content="Zero-shot Fine-grained Video Classification">
+  <meta name="twitter:description" content="ActAlign: Zero-shot Video Classification">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/image/banner.png">
+  <meta name="twitter:card" content="ActAlign: Zero-Shot Fine-Grained Video Classification via Language-Guided Sequence Alignment">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Vision-language model, Action recogntion, Large language models, Zero-shot, Fine-grained, Video classification, Sequence alignment, LLM, DTW, ActAlign">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ActAlign: Zero-Shot Fine-Grained Video Classification via Language-Guided Sequence Alignment</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ActAlign: Zero-Shot Fine-Grained Video Classification
+via Language-Guided Sequence Alignment</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="#" target="_blank">Amir Aghdam</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Vincent Tao Hu</a><sup>2</sup>,</span>
+                  <!-- <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                  </span> -->
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Temple University, Philadelphia, PA, U.S.A<sup>1</sup></span> <br>
+                    <span class="author-block">CompVis @ LMU Munich, MCML, Germany<sup>2</sup></span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2506.22967.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper (Pre-print)</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/amir-aghdam/ActAlign" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2506.22967" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser Figure -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Image-Text Emdbedding Space</h2>
+    <figure class="has-text-centered">
+      <img src="static/images/banner.png" alt="Teaser figure for ActAlign">
+    </figure>
+    <p class="has-text-centered mt-2">ActAlign significantly improves zero-shot finegrained action recognition by modeling them as structured language sequences. By aligning sub-action descriptions with video frames (green vs. red paths), we achieve
+      more accurate predictions without requiring any video-text training data.</p>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We address the task of zero-shot fine-grained video classification, where no video examples or temporal annotations are available for unseen action classes. While contrastive vision-language models such as SigLIP demonstrate strong open-set recognition via mean-pooled image-text similarity, they fail to capture the temporal structure critical for distinguishing fine-grained activities. We introduce ActAlign, a zero-shot framework that formulates video classification as sequence alignment. For each class, a large language model generates an ordered sub-action sequence, which is aligned with video frames using Dynamic Time Warping (DTW) in a shared embedding space. Without any video-text supervision or fine-tuning, ActAlign achieves 30.5% accuracy on the extremely challenging ActionAtlas benchmark, where human accuracy is only 61.6%. ActAlign outperforms billion-parameter video-language models while using approximately 8x less parameters. These results demonstrate that structured language priors, combined with classical alignment techniques, offer a scalable and general approach to unlocking the open-set recognition potential of vision-language models for fine-grained video understanding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Methodology -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Methodology</h2>
+    <figure class="has-text-centered">
+      <img src="static/images/methodology.png" alt="Method overview">
+    </figure>
+    <p>
+      <strong>Our ActAlign Method Overview.</strong><br>
+      <strong>(1)</strong> <em>Subaction Generation:</em> Given fine-grained actions (e.g. Basketball Tactics), we prompt an LLM to decompose each action (e.g. Hookshot, JumpShot, Dunk) into a temporal sequence of sub-actions.<br>
+      <strong>(2)</strong> <em>Temporal Alignment:</em> Video frames are encoded by a frozen pretrained vision encoder and smoothed via a moving‐average filter. Simultaneously, each subaction is encoded by the text encoder. We compute a cosine‐similarity matrix between frame and subaction embeddings, then apply Dynamic Time Warping (DTW) to find the optimal alignment path and normalized alignment score.<br>
+      <strong>(3)</strong> <em>Class Prediction:</em> We repeat this process for each candidate action <em>m</em>, compare normalized alignment scores, and select the action sequence with the highest score as the final prediction.
+    </p>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Alignment Example</h2>
+    <figure  class="has-text-centered">
+      <img src="static/images/example.png" alt="Example alignment">
+    </figure>
+    <p class="mt-2">Comparison of similarity heatmaps and DTW alignment paths for a correct classification (right) versus an incorrect
+    prediction (middle). The correct class exhibits clearer segmentation and higher alignment quality. Please refer to the paper for scripts.</p>
+  </div>
+</section>
+
+<!-- Results Table -->
+<section class="hero is-light">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <figure class="has-text-centered">
+      <img src="static/images/results.png" alt="Quantitative Results Table">
+    </figure>
+    <p class="has-text-centered mt-2">
+        Zero-shot classification results on ActionAtlas (Salehi et al. 2024) under context-rich (T=0.2) prompting.<br>
+        ActAlign achieves state-of-the-art Top-1, Top-2, and Top-3 accuracy, outperforming all baselines and billion-parameter video–language models without any video–text supervision.<br>
+        These results highlight the effectiveness of structured sub-action alignment over flat representations such as mean-pooling and the open-set recognition capability of image-text models.
+    </p>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      If you find our work useful, please consider citing:
+      
+      <pre><code>@misc{aghdam2025actalignzeroshotfinegrainedvideo,
+      title={ActAlign: Zero-Shot Fine-Grained Video Classification via Language-Guided Sequence Alignment}, 
+      author={Amir Aghdam and Vincent Tao Hu},
+      year={2025},
+      eprint={2506.22967},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.22967},
+      }</code></pre>
+    </div>
+</section>
+
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
